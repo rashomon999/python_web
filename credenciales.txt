@@ -1,2 +1,2 @@
-strelok_guia
-jhonford1956
+usuario
+contraseña
