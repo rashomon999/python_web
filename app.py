@@ -25,6 +25,11 @@ from selenium.webdriver.chrome.options import Options
 #
 from selenium.webdriver.chrome.service import Service
 #
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException, TimeoutException, WebDriverException, StaleElementReferenceException
+    
+
 #from werkzeug.local import _request_ctx_stack
 
 app= Flask(__name__)
@@ -67,10 +72,14 @@ def css_link(archivoscss):
 
 
 def ejecutar_codigo(username, password, target_url):
+    
     try:
         ruta = os.getcwd()
-        driver_path = '{}\chromedriver.exe'.format(ruta)
+        # driver_path = '{}\chromedriver.exe'.format(ruta)
+        driver_path = r'C:\xampp\htdocs\python_web\chromedriver.exe'
         opciones = webdriver.ChromeOptions()
+        #opciones.add_argument("--headless")  # Ejecutar en modo headless
+        #opciones.add_argument("--disable-gpu")  # Necesario para Windows
         opciones.add_experimental_option("detach", True)
         driver = webdriver.Chrome(options=opciones)
         driver.get('https://instagram.com')
@@ -90,6 +99,7 @@ def ejecutar_codigo(username, password, target_url):
         password_input.click()
         password_input.send_keys(password)
         time.sleep(7)
+    
 
         try:
             time.sleep(2)
@@ -112,64 +122,112 @@ def ejecutar_codigo(username, password, target_url):
             time.sleep(8)
         except:
              pass
-         
-        driver.get(target_url)
-        
-        time.sleep(10)
-        driver.find_element(By.XPATH, '//a[contains(@href, "/following")]').click()
-        time.sleep(10)
-        
-      
-        scroll_box = driver.find_element(By.XPATH, "//div[@class='_aano']")
-        # Definir el tiempo que deseas que dure el bucle en segundos
-        tiempo_deseado = 60  # Por ejemplo, 60 segundos (1 minuto)
-        # Obtener el tiempo actual en segundos
-        tiempo_inicial = time.time()
-
+        #######################
+        #######################
+        contador = 0
+        boolean = True
+        div_elements = set()  # Usamos un conjunto en lugar de una lista, aqui para no repetir
+        div_hrefs = set()
+        div_hrefs.add(target_url)
+        success = False
+        attempts = 0
+        max_attempts = 2
         while True:
-            time.sleep(2)
-            ht = driver.execute_script(""" 
-            arguments[0].scrollTo(0, arguments[0].scrollHeight);
-            return arguments[0].scrollHeight; """, scroll_box)
-            time.sleep(5)
-            #verificar tiempo actual nuevamente
-            tiempo_actual = time.time()
-            # Verificar si ha pasado el tiempo deseado
-            if tiempo_actual - tiempo_inicial >= tiempo_deseado:
-                break
-        
-        seg = driver.find_elements(By.XPATH,"//a[@class='x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz notranslate _a6hd']")
-        seg = [i.get_attribute('href') for i in seg]
-        driver.maximize_window()
-        
-        
-        
-        
-        while True:
-                seg = driver.find_elements(By.XPATH, "//a[@class='x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz notranslate _a6hd']")
-                try:
-                    seg = [i.get_attribute('href') for i in seg]
-                except:
-                    continue
-                
-                for i in seg:
-                    driver.get(i)
-                    time.sleep(2)
+            for target_url in div_hrefs:
+                success = False
+                attempts = 0
+                #and attempts < max_attempts
+                while not success:
                     try:
-                        seguir = driver.find_element(By.XPATH, '//div[text()="Seguir"]')
-                        seguir = driver.find_element(By.XPATH, '//div[text()="Seguir"]')
-                        seguir.click()
-                        time.sleep(2)
-                    except:
-                        continue
-                    
-    except Exception as e:
-        print('Error:', str(e))
-        
-    finally:
-        pass
-        
+                        driver.get(target_url)
+                        time.sleep(10)
+                        driver.find_element(By.XPATH, '//a[contains(@href, "/following")]').click()
+                        time.sleep(5)
+                        for _ in range(8):
+                            actions = ActionChains(driver)
+                            actions.send_keys(Keys.TAB)
+                            actions.perform()
+                        success = True
+                        #break  # Sal del bucle for si se tiene éxito
+                    except StaleElementReferenceException:
+                        print(f"Error: Referencia a un elemento no válida (stale element) en {target_url}. Intentando de nuevo.")
+                        attempts += 1
+                        break
+                        #break
+                    except NoSuchElementException:
+                        print(f"Error: No se encontró el enlace de 'following' en {target_url}. Intentando de nuevo.")
+                        attempts += 1
+                        #div_hrefs = div_hrefs[attempts]
+                        break
+                    except Exception as e:
+                        time.sleep(18)
+                        print(f"Ocurrió una excepción no controlada en {target_url}: {e}")
+                        attempts += 1
+                        break
+    
+            #if success:
+                #break  # Sal del bucle for si se tiene éxito
+            # Seguir perfiles
+            #300 -= 77
+            #div_elements = set()  # Usamos un conjunto en lugar de una lista
+            try:
+                tiempo_inicial = time.time()
+                tiempo_deseado = 350  
+                while time.time() - tiempo_inicial < tiempo_deseado:
+                    actions = ActionChains(driver)
+                    actions.send_keys(Keys.ARROW_DOWN)  # Tecla de flecha hacia abajo
+                    actions.perform()
+                    time.sleep(2)  # Espera opcional entre cada acción de tecla
+                    # Obtener elementos y continuar
+                    new_div_elements = driver.find_elements(By.XPATH, "//div[@class='x1dm5mii x16mil14 xiojian x1yutycm x1lliihq x193iq5w xh8yej3']")
+                    div_elements.update(new_div_elements)
+            except Exception as e:
+                print(f"Error al obtener los elementos div: {e}")
 
+            try: 
+                print(f"Total de elementos div encontrados: {len(div_elements)}")
+                contador += len(div_elements)
+            except:
+                pass
+
+        
+            hrefs = []
+            contador2 = 0
+            for div_element in div_elements:
+                # Encuentra el <a> dentro del <div>
+                a_element = div_element.find_element(By.XPATH, ".//a")
+                # Obtén el atributo href del <a>
+                href = a_element.get_attribute('href')
+                contador2 += 1
+                if contador2 == 1:
+                    target_url = href
+                if contador2 == 2:
+                    target_url2 = href
+                # Añade el href a la lista
+                hrefs.append(href)
+                div_hrefs.add(href) 
+        
+            # Seguir perfiles
+            driver.get('https://instagram.com') 
+            for i in hrefs:
+                driver.get(i)
+                time.sleep(2)
+                try:
+                    seguir = driver.find_element(By.XPATH, '//div[text()="Seguir"]')
+                    seguir.click()
+                    time.sleep(2)
+                except NoSuchElementException:
+                    continue
+                except ElementClickInterceptedException:
+                    continue
+        
+            #if contador > 90 and contador < 110:
+            #    break
+        
+    except Exception as e:
+        print(f"Ocurrió un error general: {e}")
+
+    
 @app.route('/bot', methods=['GET', 'POST'])
 def admin_bot():
     if request.method == 'POST':
