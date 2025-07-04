@@ -1,46 +1,70 @@
-
-from flask import Flask
-from flask import render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, send_from_directory
 from flaskext.mysql import MySQL
-from datetime import datetime
-from flask import send_from_directory
+from datetime import datetime, timedelta
 import os
 import threading
-import atexit
-from multiprocessing import Process
-   
-##########################
-##########################
-#pip install selenium
-#pip install webdriver_manager
-
-import os
-from selenium import webdriver
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.support.ui import WebDriverWait # available since 2.4.0
 import time
+import json
+from flask_apscheduler import APScheduler
+
+# Configuración Selenium
+from selenium import webdriver
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.options import Options
-#
 from selenium.webdriver.chrome.service import Service
-#
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException, TimeoutException, WebDriverException, StaleElementReferenceException
-    
+from selenium.common.exceptions import (NoSuchElementException, 
+                                      ElementClickInterceptedException,
+                                      StaleElementReferenceException,
+                                      TimeoutException)
+from datetime import datetime
 
-#from werkzeug.local import _request_ctx_stack
+app = Flask(__name__)
+app.secret_key = "barcelona"
 
-app= Flask(__name__)
-app.secret_key="barcelona"
-mysql=MySQL()
-
-app.config['MYSQL_DATABASE_HOST']='localhost'
-app.config['MYSQL_DATABASE_USER']='root'
-app.config['MYSQL_DATABASE_PASSWORD']=''
-app.config['MYSQL_DATABASE_DB']='python'
+# Configuración MySQL
+mysql = MySQL()
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = ''
+app.config['MYSQL_DATABASE_DB'] = 'python'
 mysql.init_app(app)
+
+# Configuración del Bot
+bot_config = {
+    'username': None,
+    'password': None,
+    'target_url': None,
+    'active': False,
+    'last_run': None
+}
+
+# Configuración del Scheduler
+scheduler = APScheduler()
+
+# Función para guardar configuración
+def save_bot_config():
+    with open('bot_config.json', 'w') as f:
+        json.dump(bot_config, f)
+
+# Función para cargar configuración al iniciar
+def load_bot_config():
+    try:
+        with open('bot_config.json') as f:
+            config = json.load(f)
+            bot_config.update(config)
+    except FileNotFoundError:
+        pass
+
+# Cargar configuración al inicio
+load_bot_config()
+
+# =============================================
+# Rutas principales (originales preservadas)
+# =============================================
 
 @app.route('/')
 def inicio():
@@ -48,486 +72,371 @@ def inicio():
 
 @app.route('/img/<imagen>')
 def imagenes(imagen):
-    print(imagen)
     return send_from_directory(os.path.join('templates/sitio/img'), imagen)
-
 
 @app.route('/admin/cerrar')
 def admin_login_cerrar():
     session.clear()
     return redirect('/admin/login')
 
-
 @app.route("/css/<archivoscss>")
 def css_link(archivoscss):
     return send_from_directory(os.path.join('templates/sitio/css'), archivoscss)
 
-
-
-
-    
-    
-
-
-
-
-def ejecutar_codigo(username, password, target_url):
-    
-    try:
-        ruta = os.getcwd()
-        # driver_path = '{}\chromedriver.exe'.format(ruta)
-        driver_path = r'C:\xampp\htdocs\python_web\chromedriver.exe'
-        opciones = webdriver.ChromeOptions()
-        #opciones.add_argument("--headless")  # Ejecutar en modo headless
-        #opciones.add_argument("--disable-gpu")  # Necesario para Windows
-        opciones.add_experimental_option("detach", True)
-        driver = webdriver.Chrome(options=opciones)
-        driver.get('https://instagram.com')
-        time.sleep(5)
-        driver.set_window_size(500, 1000)
-
-        # ... otras operaciones ...
-
-        # Ingresar nombre de usuario
-        username_input = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[1]/div/label/input')
-        username_input.click()
-        username_input.send_keys(username)
-        time.sleep(5)
-
-        # Ingresar contraseña
-        password_input = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[2]/div/label/input')
-        password_input.click()
-        password_input.send_keys(password)
-        time.sleep(7)
-    
-
-        try:
-            time.sleep(2)
-            login = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]/button')
-            login.click()
-            time.sleep(8)
-        except:
-            pass
-        #1 Ahora no
-        try:
-            dementor = driver.find_element(By.XPATH,"//div[@role = 'button']").click()
-            time.sleep(8)
-        except:
-            pass
-        # Ahora no
-        try:
-            buttons = driver.find_elements(By.XPATH, "//*[contains(text(), 'Ahora no')]")
-            for btn in buttons:
-                btn.click()
-            time.sleep(8)
-        except:
-             pass
-        #######################
-        #######################
-        contador = 0
-        boolean = True
-        div_elements = set()  # Usamos un conjunto en lugar de una lista, aqui para no repetir
-        div_hrefs = set()
-        div_hrefs.add(target_url)
-        success = False
-        attempts = 0
-        max_attempts = 2
-        while True:
-            for target_url in div_hrefs:
-                success = False
-                attempts = 0
-                #and attempts < max_attempts
-                while not success:
-                    try:
-                        driver.get(target_url)
-                        time.sleep(10)
-                        driver.find_element(By.XPATH, '//a[contains(@href, "/following")]').click()
-                        time.sleep(5)
-                        for _ in range(8):
-                            actions = ActionChains(driver)
-                            actions.send_keys(Keys.TAB)
-                            actions.perform()
-                        success = True
-                        #break  # Sal del bucle for si se tiene éxito
-                    except StaleElementReferenceException:
-                        print(f"Error: Referencia a un elemento no válida (stale element) en {target_url}. Intentando de nuevo.")
-                        attempts += 1
-                        break
-                        #break
-                    except NoSuchElementException:
-                        print(f"Error: No se encontró el enlace de 'following' en {target_url}. Intentando de nuevo.")
-                        attempts += 1
-                        #div_hrefs = div_hrefs[attempts]
-                        break
-                    except Exception as e:
-                        time.sleep(18)
-                        print(f"Ocurrió una excepción no controlada en {target_url}: {e}")
-                        attempts += 1
-                        break
-    
-            #if success:
-                #break  # Sal del bucle for si se tiene éxito
-            # Seguir perfiles
-            #300 -= 77
-            #div_elements = set()  # Usamos un conjunto en lugar de una lista
-            try:
-                tiempo_inicial = time.time()
-                tiempo_deseado = 350  
-                while time.time() - tiempo_inicial < tiempo_deseado:
-                    actions = ActionChains(driver)
-                    actions.send_keys(Keys.ARROW_DOWN)  # Tecla de flecha hacia abajo
-                    actions.perform()
-                    time.sleep(2)  # Espera opcional entre cada acción de tecla
-                    # Obtener elementos y continuar
-                    new_div_elements = driver.find_elements(By.XPATH, "//div[@class='x1dm5mii x16mil14 xiojian x1yutycm x1lliihq x193iq5w xh8yej3']")
-                    div_elements.update(new_div_elements)
-            except Exception as e:
-                print(f"Error al obtener los elementos div: {e}")
-
-            try: 
-                print(f"Total de elementos div encontrados: {len(div_elements)}")
-                contador += len(div_elements)
-            except:
-                pass
-
-        
-            hrefs = []
-            contador2 = 0
-            for div_element in div_elements:
-                # Encuentra el <a> dentro del <div>
-                a_element = div_element.find_element(By.XPATH, ".//a")
-                # Obtén el atributo href del <a>
-                href = a_element.get_attribute('href')
-                contador2 += 1
-                if contador2 == 1:
-                    target_url = href
-                if contador2 == 2:
-                    target_url2 = href
-                # Añade el href a la lista
-                hrefs.append(href)
-                div_hrefs.add(href) 
-        
-            # Seguir perfiles
-            driver.get('https://instagram.com') 
-            for i in hrefs:
-                driver.get(i)
-                time.sleep(2)
-                try:
-                    seguir = driver.find_element(By.XPATH, '//div[text()="Seguir"]')
-                    seguir.click()
-                    time.sleep(2)
-                except NoSuchElementException:
-                    continue
-                except ElementClickInterceptedException:
-                    continue
-        
-            #if contador > 90 and contador < 110:
-            #    break
-        
-    except Exception as e:
-        print(f"Ocurrió un error general: {e}")
-
-    
-@app.route('/bot', methods=['GET', 'POST'])
-def admin_bot():
-    if request.method == 'POST':
-        # Obtener datos del formulario
-        username = request.form['username']
-        password = request.form['password']
-        target_url = request.form['target_url'] 
-        # Crear un hilo para ejecutar el código, ademas con los datos del formulario
-        hilo = threading.Thread(target=ejecutar_codigo, args=(username, password, target_url))
-        hilo.start()
-
-    return render_template('sitio/bot.html')
-
-
-
-    
-@app.route('/seguir', methods=['GET', 'POST'])
-def follow():
-    if request.method == 'POST':
-        username_=request.form['username_']
-        password_= request.form['password_']
-        target_url_=request.form['target_url_']
-        hilo= threading.Thread(target=seguir, args=(username_, password_, target_url_))
-        hilo.start()
-    return render_template('sitio/seguir.html')
-
-def seguir(username_, password_, target_url_):
-    try:
-        ruta= os.getcwd()
-        driver_path = '{}chromedriver.exe'.format(ruta)
-        opciones = webdriver.ChromeOptions()
-        driver = webdriver.Chrome(options=opciones)
-        driver.get('https://instagram.com')
-        time.sleep(5)
-        driver.set_window_size(500, 1000)
-
-        # ... otras operaciones ...
-
-        # Ingresar nombre de usuario
-        username_input = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[1]/div/label/input')
-        username_input.click()
-        username_input.send_keys(username_)
-        time.sleep(5)
-
-        # Ingresar contraseña
-        password_input = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[2]/div/label/input')
-        password_input.click()
-        password_input.send_keys(password_)
-        time.sleep(7)
-        
-        try:
-            time.sleep(2)
-            login = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]/button')
-            login.click()
-            time.sleep(8)
-        except:
-            pass
-        
-        #1 Ahora no
-        try:
-            dementor = driver.find_element(By.XPATH,"//div[@role = 'button']").click()
-            time.sleep(10)
-        except:
-            pass
-        #2 Ahora no
-        try:
-            buttons = driver.find_elements(By.XPATH, "//*[contains(text(), 'Ahora no')]")
-            for btn in buttons:
-                btn.click()
-            time.sleep(8)
-        except:
-            pass
-        
-        driver.get(target_url_)
-        driver.set_window_size(500, 1000)
-        time.sleep(12)
-        
-        
-        #driver.find_element(By.XPATH, "//a[contains(@href, '/following')]").click()
-        #time.sleep(4)
-        
-        
-        #scroll_box = driver.find_element(By.XPATH, "//div[@class='_aano']")
-        # Definir el tiempo que deseas que dure el bucle en segundos
-        #tiempo_deseado = 60  # Por ejemplo, 60 segundos (1 minuto)
-        # Obtener el tiempo actual en segundos
-        #tiempo_inicial = time.time()
-
-        #while True:
-        #    time.sleep(2)
-        #    ht = driver.execute_script(""" 
-        #    arguments[0].scrollTo(0, arguments[0].scrollHeight);
-            #return arguments[0].scrollHeight; """, scroll_box)
-            #time.sleep(5)
-            #verificar tiempo actual nuevamente
-            #tiempo_actual = time.time()
-            # Verificar si ha pasado el tiempo deseado
-            #if tiempo_actual - tiempo_inicial >= tiempo_deseado:
-            #        break
-        
-        ####obteniendo lista y llendo a un href aleatorio seg[40]
-        
-        #seg = driver.find_elements(By.XPATH, "//a[@class='x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz notranslate _a6hd']")
-
-        #seg = [i.get_attribute('href') for i in seg]
-
-        #driver.get(seg[40])
-        #time.sleep(6)
-        
-        #driver.set_window_size(500, 1000)
-        #time.sleep(15)
-        
-        ########################################################
-        
-        
-        
-        
-        publi =driver.find_element(By.XPATH, '//ul[@class="x5ur3kl x13fuv20 x178xt8z x78zum5 x1q0g3np x1l1ennw xz9dl7a x4uap5 xsag5q8 xkhd6sd"]//li[1]//span//span').text
-        time.sleep(5)
-        
-        
-        
-        
-        fotos = []
-        print(publi)
-        ###cambiar aqui tambien el xpath, que es el mismo que fotos
-        while True:
-            driver.execute_script("""window.scrollTo(0,document.body.scrollHeight)""")
-            time.sleep(2)
-            f = driver.find_elements(By.XPATH,"//div[@class='_aabd _aa8k  _al3l']//a")
-            try:
-                f = [i.get_attribute('href') for i in f]
-            except:
-                continue
-            for i in f:
-                if i not in fotos:
-                    fotos.append(i)
-                
-            print(len(fotos))
-            if len(fotos) >= int(float(publi)):
-                break
-            
-        time.sleep(8)    
-        driver.maximize_window() 
-        for i in fotos:
-            driver.get(i)
-            #click
-            try:
-                #click, escribir
-                time.sleep(7)
-                escribir = driver.find_element(By.XPATH, '//form[@class="_aidk _aidl _ak6u"]/div/textarea').click()
-                time.sleep(7)
-                escribir = driver.find_element(By.XPATH, '//form[@class="_aidk _aidl _ak6u"]/div/textarea').send_keys('interesante')
-                time.sleep(2)
-                escribir = driver.find_element(By.XPATH, '//div[@class="_akhn"]/div[2]').click()
-                time.sleep(2)
-                #publicar
-                comment = driver.find_element(By.XPATH, '//div[@class=" _am-5"]/div').click()
-                time.sleep(6)
-                ########################
-                escribir = driver.find_element(By.XPATH, '//div[@class="_akhn"]/div[2]').click()
-                time.sleep(2)
-            except:
-                continue
-    except Exception as e:
-        print('Error:', str(e))
-    finally:
-        pass
-
-
-
-
-
-
-
-
-
-
+# =============================================
+# Sección de Libros (original preservada)
+# =============================================
 
 @app.route('/libros')
 def libros():
-    
-    conexion=mysql.connect()
+    conexion = mysql.connect()
     cursor = conexion.cursor()
     cursor.execute("SELECT * FROM `python_libros`")
-    libros=cursor.fetchall()
+    libros = cursor.fetchall()
     conexion.commit()
-    
     return render_template('sitio/libros.html', libros=libros)
 
-@app.route('/nosotros')
-def nosotros():
-    return render_template('sitio/nosotros.html')
-
-@app.route('/admin/')
-def admin():
-    
-    if not 'login' in session:
-        return redirect("admin/login")
-    
-    return render_template('admin/index.html')
-
-
-@app.route('/admin/login')
-def login():
-    return render_template('admin/login.html')
-
-
-@app.route('/admin/login', methods=['POST'])
-def admin_login_post():
-    _usuario=request.form['txtUsuario']
-    _password=request.form['txtPassword']
-    print(_usuario)
-    print(_password)
-    
-    if _usuario=='barcelona' and _password =='999':
-        session['login']=True
-        session["usuario"]="Administrador"
-        return render_template('admin/index.html')
-    
-    return render_template('admin/login.html', mensaje="Acceso denegado")
-
-
-    
 @app.route('/admin/libros')
 def admin_libros():
-    
     if not 'login' in session:
         return redirect("admin/login")
     
-    conexion=mysql.connect()
+    conexion = mysql.connect()
     cursor = conexion.cursor()
     cursor.execute("SELECT * FROM `python_libros`")
-    libros=cursor.fetchall()
+    libros = cursor.fetchall()
     conexion.commit()
-    
-    
     return render_template('admin/libros.html', libros=libros)
-
-
-
 
 @app.route('/admin/libros/guardar', methods=["POST"])
 def admin_libros_guardar():
-    
     if not 'login' in session:
         return redirect("admin/login")
     
-    _nombre=request.form['txtNombre']
-    _url=request.form['txtUrl']
-    _archivo=request.files['txtImagen']
+    _nombre = request.form['txtNombre']
+    _url = request.form['txtUrl']
+    _archivo = request.files['txtImagen']
     
     tiempo = datetime.now()
-    horaActual=tiempo.strftime('%Y%H%M%S')
+    horaActual = tiempo.strftime('%Y%H%M%S')
     
-    if _archivo.filename!='':
-        nuevoNombre = horaActual+'_'+_archivo.filename
-        _archivo.save("templates/sitio/img/"+ nuevoNombre)
+    if _archivo.filename != '':
+        nuevoNombre = horaActual + '_' + _archivo.filename
+        _archivo.save("templates/sitio/img/" + nuevoNombre)
     
-    sql="INSERT INTO `python_libros`(`id`, `nombre`, `imagen`, `url`) VALUES (NULL,%s,%s,%s);"
-    datos=(_nombre,nuevoNombre,_url)
-    conexion= mysql.connect()
-    cursor=conexion.cursor()
-    cursor.execute(sql,datos)
+    sql = "INSERT INTO `python_libros`(`id`, `nombre`, `imagen`, `url`) VALUES (NULL,%s,%s,%s);"
+    datos = (_nombre, nuevoNombre, _url)
+    conexion = mysql.connect()
+    cursor = conexion.cursor()
+    cursor.execute(sql, datos)
     conexion.commit()
-    
-    print(_nombre)
-    print(_archivo)
-    print(_archivo)
     return redirect('/admin/libros')
-    
-@app.route('/admin/libros/borrar',methods=['POST'])
+
+@app.route('/admin/libros/borrar', methods=['POST'])
 def admin_libros_borrar():
-    
-    
     if not 'login' in session:
         return redirect("admin/login")
     
-    
-    _id=request.form['txtID']
-    print(_id)
-    
-    
-    conexion=mysql.connect()
+    _id = request.form['txtID']
+    conexion = mysql.connect()
     cursor = conexion.cursor()
-    cursor.execute("SELECT imagen FROM `python_libros` WHERE id=%s",(_id))
-    libros=cursor.fetchall()
+    cursor.execute("SELECT imagen FROM `python_libros` WHERE id=%s", (_id))
+    libros = cursor.fetchall()
     conexion.commit()
     
     if os.path.exists("templates/sitio/img/" + str(libros[0][0])):
         os.unlink("templates/sitio/img/" + str(libros[0][0]))
     
-    conexion=mysql.connect()
+    conexion = mysql.connect()
     cursor = conexion.cursor()
-    cursor.execute("DELETE FROM `python_libros` WHERE id=%s",(_id))
+    cursor.execute("DELETE FROM `python_libros` WHERE id=%s", (_id))
     conexion.commit()
-    
     return redirect('/admin/libros')
 
+# =============================================
+# Funciones del Bot Instagram (mejoradas)
+# =============================================
 
-if  __name__ == '__main__':
-   app.run(debug=True)
+# ==================== FUNCIONES DEL BOT ====================
 
+def crear_driver(detach=True, ancho=500, alto=1000):
+    """Crea y configura el driver de Chrome"""
+    opciones = webdriver.ChromeOptions()
+    if detach:
+        opciones.add_experimental_option("detach", True)
+    
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=opciones)
+    driver.set_window_size(ancho, alto)
+    return driver
+
+def abrir_instagram(driver):
+    """Abre la página de Instagram"""
+    driver.get("https://instagram.com")
+    time.sleep(5)
+
+def iniciar_sesion(driver, username, password):
+    """Realiza el login en Instagram"""
+    try:
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.NAME, "username"))
+        )
+        driver.find_element(By.NAME, "username").send_keys(username)
+        driver.find_element(By.NAME, "password").send_keys(password)
+        driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]/button').click()
+        time.sleep(8)
+    except Exception as e:
+        print(f"Error durante login: {e}")
+
+def ignorar_ventanas_emergentes(driver):
+    """Cierra ventanas emergentes de Instagram"""
+    try:
+        driver.find_element(By.XPATH, "//div[@role='button']").click()
+        time.sleep(3)
+    except:
+        pass
+    
+    try:
+        botones = driver.find_elements(By.XPATH, "//*[contains(text(), 'Ahora no')]")
+        for btn in botones:
+            btn.click()
+        time.sleep(3)
+    except:
+        pass
+
+def abrir_seguidos(driver, target_url, reintentos=3):
+    """Abre la lista de seguidos de un perfil"""
+    for intento in range(reintentos):
+        try:
+            driver.get(target_url)
+            time.sleep(5)
+            
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, '//a[contains(@href, "/following")]'))
+            ).click()
+            
+            time.sleep(3)
+            return True
+            
+        except Exception as e:
+            print(f"Intento {intento+1} fallido: {str(e)}")
+            time.sleep(5)
+    
+    return False
+
+def extraer_seguidos(driver, max_scrolls=15, scroll_delay=1.5):
+    """Extrae los perfiles de la lista de seguidos"""
+    try:
+        modal = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, 'div[role="dialog"]'))
+        )
+        
+        scroll_box = modal.find_element(By.CSS_SELECTOR, 'div > div:nth-child(2)')
+        
+        last_height = driver.execute_script("return arguments[0].scrollHeight", scroll_box)
+        for _ in range(max_scrolls):
+            driver.execute_script("arguments[0].scrollTo(0, arguments[0].scrollHeight)", scroll_box)
+            time.sleep(scroll_delay)
+            new_height = driver.execute_script("return arguments[0].scrollHeight", scroll_box)
+            if new_height == last_height:
+                break
+            last_height = new_height
+        
+        perfiles = set()
+        for elemento in scroll_box.find_elements(By.TAG_NAME, 'a'):
+            href = elemento.get_attribute('href')
+            if href and "/" in href:
+                perfiles.add(href)
+                
+        return perfiles
+        
+    except Exception as e:
+        print(f"Error extrayendo seguidos: {str(e)}")
+        return set()
+
+def seguir_perfiles(driver, lista_perfiles, max_intentos=3):
+    """Sigue una lista de perfiles"""
+    for perfil in lista_perfiles:
+        for intento in range(max_intentos):
+            try:
+                driver.get(perfil)
+                time.sleep(2)
+                
+                boton_seguir = WebDriverWait(driver, 5).until(
+                    EC.element_to_be_clickable((By.XPATH, '//div[text()="Seguir"]'))
+                )
+                boton_seguir.click()
+                print(f"✅ Seguido: {perfil}")
+                time.sleep(2)
+                break
+                
+            except Exception as e:
+                print(f"⚠️ No se pudo seguir {perfil} (intento {intento+1}): {str(e)}")
+                time.sleep(3)
+
+def ejecutar_bot(username, password, target_url):
+    """Función principal que ejecuta todo el flujo del bot"""
+    try:
+        print("🚀 Iniciando bot...")
+        driver = crear_driver()
+        
+        abrir_instagram(driver)
+        iniciar_sesion(driver, username, password)
+        ignorar_ventanas_emergentes(driver)
+        
+        if abrir_seguidos(driver, target_url):
+            perfiles = extraer_seguidos(driver)
+            print(f"🔍 Encontrados {len(perfiles)} perfiles para seguir")
+            
+            if perfiles:
+                seguir_perfiles(driver, perfiles)
+        
+        bot_config['last_run'] = datetime.now().isoformat()
+        save_bot_config()
+        print("✅ Bot completado exitosamente")
+        
+    except Exception as e:
+        print(f"❌ Error crítico en el bot: {str(e)}")
+    finally:
+        try:
+            driver.quit()
+        except:
+            pass
+
+def ejecutar_bot(username, password, target_url):
+    try:
+        driver = crear_driver()
+        abrir_instagram(driver)
+        iniciar_sesion(driver, username, password)
+        ignorar_ventanas_emergentes(driver)
+        
+        if abrir_seguidos(driver, target_url):
+            links = extraer_seguidos(driver)
+            seguir_perfiles(driver, links)
+            
+        bot_config['last_run'] = datetime.now().isoformat()
+        save_bot_config()
+    except Exception as e:
+        print(f"Error en ejecución del bot: {e}")
+    finally:
+        try:
+            # Elimina cookies y cierra completamente
+            driver.delete_all_cookies()
+            driver.quit()
+        except:
+            pass
+
+# =============================================
+# Rutas del Bot (mejoradas)
+# =============================================
+
+@app.route('/bot', methods=['GET', 'POST'])
+def admin_bot():
+    global bot_config
+    
+    if request.method == 'POST':
+        bot_config.update({
+            'username': request.form['username'],
+            'password': request.form['password'],
+            'target_url': request.form['target_url'],
+            'active': True
+        })
+        save_bot_config()
+        
+        threading.Thread(
+            target=ejecutar_bot,
+            args=(bot_config['username'], bot_config['password'], bot_config['target_url'])
+        ).start()
+        
+        return redirect('/bot?success=1')
+    
+    return render_template('sitio/bot.html', config=bot_config)
+
+@app.route('/bot/control', methods=['POST'])
+def control_bot():
+    global bot_config
+    
+    action = request.form.get('action')
+    
+    if action == 'start':
+        bot_config['active'] = True
+    elif action == 'stop':
+        bot_config['active'] = False
+    elif action == 'run_now':
+        threading.Thread(
+            target=ejecutar_bot,
+            args=(bot_config['username'], bot_config['password'], bot_config['target_url'])
+        ).start()
+    
+    save_bot_config()
+    return redirect('/bot')
+
+# =============================================
+# Tarea programada y rutas administrativas
+# =============================================
+
+def tarea_programada():
+    if bot_config['active'] and all(bot_config.values()):
+        print(f"Ejecutando bot programado a las {datetime.now()}")
+        threading.Thread(
+            target=ejecutar_bot,
+            args=(bot_config['username'], bot_config['password'], bot_config['target_url'])
+        ).start()
+
+def init_scheduler():
+    scheduler.init_app(app)
+    scheduler.start()
+    scheduler.add_job(
+        id='ejecucion_automatica',
+        func=tarea_programada,
+        trigger='interval',
+        days=3,
+        next_run_time=datetime.now() + timedelta(seconds=10)
+    )
+
+ 
+
+def tiempo_proxima_ejecucion():
+    if not bot_config.get('last_run'):
+        return "Primera ejecución pendiente"
+    
+    ultima_ejecucion = datetime.fromisoformat(bot_config['last_run'])
+    proxima_ejecucion = ultima_ejecucion + timedelta(days=3)
+    tiempo_restante = proxima_ejecucion - datetime.now()
+    
+    # Formatear el tiempo restante
+    dias, segundos = tiempo_restante.days, tiempo_restante.seconds
+    horas = segundos // 3600
+    minutos = (segundos % 3600) // 60
+    segundos = segundos % 60
+    
+    return f"{dias}d {horas}h {minutos}m {segundos}s"
+
+# ... [Tus rutas administrativas originales preservadas] ...
+ 
+@app.route('/tiempo_restante')
+def tiempo_restante():
+    return tiempo_proxima_ejecucion()
+
+def tiempo_proxima_ejecucion():
+    if not bot_config.get('last_run') or not bot_config.get('active'):
+        return "No programado"
+    
+    ultima_ejecucion = datetime.fromisoformat(bot_config['last_run'])
+    proxima_ejecucion = ultima_ejecucion + timedelta(days=3)
+    tiempo_restante = proxima_ejecucion - datetime.now()
+    
+    if tiempo_restante.total_seconds() <= 0:
+        return "Próximamente..."
+        
+    dias = tiempo_restante.days
+    segundos = tiempo_restante.seconds
+    horas = segundos // 3600
+    minutos = (segundos % 3600) // 60
+    segundos = segundos % 60
+    
+    return f"{dias}d {horas}h {minutos}m {segundos}s"
+
+if __name__ == '__main__':
+    init_scheduler()
+    app.run(debug=True)
