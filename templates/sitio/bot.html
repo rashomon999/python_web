@@ -4,7 +4,7 @@
     <h2>Configuración del Bot Instagram</h2>
 
     <div class="form-section">
-        <h3>🔑 Credenciales de Instagram</h3>
+        <h3> Credenciales de Instagram</h3>
         <form method="post" action="{{ url_for('admin_bot') }}">
             <div class="form-group">
                 <label for="username">Username:</label>
@@ -17,19 +17,19 @@
             </div>
 
             <div class="form-group">
-                <h3>🎯 Perfil Objetivo</h3>
+                <h3> Perfil Objetivo</h3>
                 <label for="target_url">URL del perfil:</label>
                 <input type="text" id="target_url" name="target_url" 
                        value="{{ config.target_url if config else '' }}" 
                        placeholder="Ej: https://www.instagram.com/sadhguru/" required>
             </div>
 
-            <button type="submit" class="btn-submit">💾 Guardar Configuración</button>
+            <button type="submit" class="btn-submit"> Guardar Configuración</button>
         </form>
     </div>
 
     <div class="controls-section">
-        <h3>⚙️ Controles de Ejecución</h3>
+        <h3> Controles de Ejecución</h3>
         
         <div class="status-box">
             <p><strong>Estado:</strong> 
@@ -49,16 +49,16 @@
         <div class="action-buttons">
             <form method="post" action="{{ url_for('control_bot') }}">
                 <button type="submit" name="action" value="run_now" class="btn-run-now">
-                    ▶ Ejecutar Ahora
+                     Ejecutar Ahora
                 </button>
                 
                 {% if config and config.active %}
                     <button type="submit" name="action" value="stop" class="btn-stop">
-                    ⏸ Detener Automático
+                     Detener Automático
                     </button>
                 {% else %}
                     <button type="submit" name="action" value="start" class="btn-start">
-                    🔄 Activar Automático
+                     Activar Automático
                     </button>
                 {% endif %}
             </form>
@@ -67,7 +67,7 @@
 
     {% if request.args.get('success') %}
         <div class="alert alert-success">
-            ✅ Configuración guardada correctamente
+             Configuración guardada correctamente
         </div>
     {% endif %}
 

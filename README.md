@@ -2,3 +2,16 @@ mejora realizada, cada 3 dias sigue varias personas para evitar sospechas... acu
 
 
  
+NSSM para ejecutar el servicio
+Se necesita chocolatey
+
+Instalar NSSM:
+powershell
+choco install nssm
+
+ejecutar el CMD como administrador y:
+sc start InstagramBot
+
+
+iniciar el servicio automaticamente cuando se enciende el compu:
+sc config InstagramBot start= auto
