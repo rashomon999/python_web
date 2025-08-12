@@ -19,4 +19,4 @@ sc config InstagramBot start= auto
 
 Bueno, parecia funcionar, programe la ejecucion como una tarea pero tiempo despues note que aun con la contraseña correcta instagram no me permite ingresar, cosa que no pasaba si lo ejecutaba yo mismo anteriormente,
 es decir, no se exactamente la razon, dado que ejecutando el programa por mi mismo se llego a aseguir a mas de 1000 personas y se bloqueo la cuenta por la rapidez de esta accion, pero no es comprensible porque pasa esto ahora
-si los tiempos son razonables.
+si los tiempos son razonables, por que no me bloquean la cuenta, si no que directamente no puedo acceder desde el driver, pero si desde google normal.
