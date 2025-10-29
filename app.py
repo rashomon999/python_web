@@ -20,6 +20,7 @@ from selenium.common.exceptions import (NoSuchElementException,
                                       ElementClickInterceptedException,
                                       StaleElementReferenceException,
                                       TimeoutException)
+
 from datetime import datetime
 
 app = Flask(__name__)
@@ -358,17 +359,33 @@ def control_bot():
     
     action = request.form.get('action')
     
-    if action == 'start':
+    if action == 'run_now':
+        # Verifica que las credenciales estén configuradas
+        if not all([bot_config.get('username'), bot_config.get('password'), bot_config.get('target_url')]):
+            return redirect('/bot?error=Falta configurar credenciales')
+        
+        # Ejecuta el bot en un hilo separado (sin bloquear Flask)
+        try:
+            threading.Thread(
+                target=ejecutar_bot,
+                args=(bot_config['username'], bot_config['password'], bot_config['target_url']),
+                daemon=True  # Permite que el hilo se cierre si Flask se detiene
+            ).start()
+            return redirect('/bot?success=Bot iniciado manualmente')
+        except Exception as e:
+            return redirect(f'/bot?error=Error al iniciar el bot: {str(e)}')
+    
+    # Resto de acciones (start/stop)
+    elif action == 'start':
         bot_config['active'] = True
+        save_bot_config()
+        return redirect('/bot?success=Bot programado activado')
+    
     elif action == 'stop':
         bot_config['active'] = False
-    elif action == 'run_now':
-        threading.Thread(
-            target=ejecutar_bot,
-            args=(bot_config['username'], bot_config['password'], bot_config['target_url'])
-        ).start()
+        save_bot_config()
+        return redirect('/bot?success=Bot programado detenido')
     
-    save_bot_config()
     return redirect('/bot')
 
 # =============================================
@@ -390,7 +407,7 @@ def init_scheduler():
         id='ejecucion_automatica',
         func=tarea_programada,
         trigger='interval',
-        days=3,
+        days=1,
         next_run_time=datetime.now() + timedelta(seconds=10)
     )
 
@@ -401,7 +418,7 @@ def tiempo_proxima_ejecucion():
         return "Primera ejecución pendiente"
     
     ultima_ejecucion = datetime.fromisoformat(bot_config['last_run'])
-    proxima_ejecucion = ultima_ejecucion + timedelta(days=3)
+    proxima_ejecucion = ultima_ejecucion + timedelta(days=1)
     tiempo_restante = proxima_ejecucion - datetime.now()
     
     # Formatear el tiempo restante
@@ -409,7 +426,7 @@ def tiempo_proxima_ejecucion():
     horas = segundos // 3600
     minutos = (segundos % 3600) // 60
     segundos = segundos % 60
-    
+     
     return f"{dias}d {horas}h {minutos}m {segundos}s"
 
 # ... [Tus rutas administrativas originales preservadas] ...
@@ -423,7 +440,7 @@ def tiempo_proxima_ejecucion():
         return "No programado"
     
     ultima_ejecucion = datetime.fromisoformat(bot_config['last_run'])
-    proxima_ejecucion = ultima_ejecucion + timedelta(days=3)
+    proxima_ejecucion = ultima_ejecucion + timedelta(days=1)
     tiempo_restante = proxima_ejecucion - datetime.now()
     
     if tiempo_restante.total_seconds() <= 0:
@@ -439,4 +456,4 @@ def tiempo_proxima_ejecucion():
 
 if __name__ == '__main__':
     init_scheduler()
-    app.run(debug=True)
+    app.run(debug=True) 
