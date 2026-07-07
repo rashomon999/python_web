@@ -5,7 +5,9 @@
 
 ###### 
 
-este es el verdadero, la clave es que como se dijo, usa NSSM:
+Si se quiere configurar como servicio:
+
+ NSSM:
 asi se ejecuta para ver si funciona:
 C:\Users\luisg\AppData\Local\Programs\Python\Python312\python.exe C:\xampp\htdocs\python_web\app.py
 
