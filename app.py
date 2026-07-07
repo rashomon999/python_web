@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request, redirect, session, send_from_directory
 from flaskext.mysql import MySQL
-from datetime import datetime, timedelta
+from datetime import datetime
 import os
 import threading
 import time
 import json
-from flask_apscheduler import APScheduler
 
 # Configuración Selenium
 from selenium import webdriver
@@ -13,13 +12,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import (NoSuchElementException, 
                                       ElementClickInterceptedException,
                                       StaleElementReferenceException,
                                       TimeoutException)
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.core.driver_cache import DriverCacheManager
 
 from datetime import datetime
 
@@ -39,17 +39,29 @@ bot_config = {
     'username': None,
     'password': None,
     'target_url': None,
-    'active': False,
-    'last_run': None
+    'last_run': None,
+    'status': 'idle',
+    'message': ''
 }
-
-# Configuración del Scheduler
-scheduler = APScheduler()
 
 # Función para guardar configuración
 def save_bot_config():
     with open('bot_config.json', 'w') as f:
         json.dump(bot_config, f)
+
+# Función para escribir logs del bot
+def append_bot_log(message):
+    timestamp = datetime.now().isoformat(timespec='seconds')
+    with open('bot.log', 'a', encoding='utf-8') as f:
+        f.write(f'[{timestamp}] {message}\n')
+
+# Función para leer las últimas líneas del log
+def tail_bot_log(lines=20):
+    try:
+        with open('bot.log', 'r', encoding='utf-8') as f:
+            return f.readlines()[-lines:]
+    except FileNotFoundError:
+        return []
 
 # Función para cargar configuración al iniciar
 def load_bot_config():
@@ -161,12 +173,16 @@ def admin_libros_borrar():
 # ==================== FUNCIONES DEL BOT ====================
 
 def crear_driver(detach=True, ancho=500, alto=1000):
-    """Crea y configura el driver de Chrome"""
+    """Configura y retorna una instancia del navegador Chrome."""
     opciones = webdriver.ChromeOptions()
     if detach:
         opciones.add_experimental_option("detach", True)
-    
-    service = Service(ChromeDriverManager().install())
+
+    cache_dir = os.path.join(os.path.dirname(__file__), '.wdm')
+    os.makedirs(cache_dir, exist_ok=True)
+    cache_manager = DriverCacheManager(root_dir=cache_dir)
+
+    service = Service(ChromeDriverManager(cache_manager=cache_manager).install())
     driver = webdriver.Chrome(service=service, options=opciones)
     driver.set_window_size(ancho, alto)
     return driver
@@ -179,12 +195,9 @@ def abrir_instagram(driver):
 def iniciar_sesion(driver, username, password):
     """Realiza el login en Instagram"""
     try:
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.NAME, "username"))
-        )
-        driver.find_element(By.NAME, "username").send_keys(username)
-        driver.find_element(By.NAME, "password").send_keys(password)
-        driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]/button').click()
+        driver.find_element(By.NAME, "email").send_keys(username)
+        driver.find_element(By.NAME, "pass").send_keys(password)
+        driver.find_element(By.XPATH, '//*[@id="login_form"]/div/div/div/div[3]/div/div').click()
         time.sleep(8)
     except Exception as e:
         print(f"Error durante login: {e}")
@@ -213,7 +226,7 @@ def abrir_seguidos(driver, target_url, reintentos=3):
             time.sleep(5)
             
             WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, '//a[contains(@href, "/following")]'))
+                EC.presence_of_element_located((By.XPATH, '(//a[contains(@href, "#")])[3]'))
             ).click()
             
             time.sleep(3)
@@ -277,54 +290,51 @@ def seguir_perfiles(driver, lista_perfiles, max_intentos=3):
 
 def ejecutar_bot(username, password, target_url):
     """Función principal que ejecuta todo el flujo del bot"""
+    driver = None
+    bot_config['status'] = 'running'
+    bot_config['message'] = 'Iniciando bot...'
+    save_bot_config()
+
     try:
-        print("🚀 Iniciando bot...")
+        msg = "🚀 Iniciando bot..."
+        print(msg)
+        append_bot_log(msg)
+        bot_config['message'] = 'Creando driver de Chrome...'
+        save_bot_config()
         driver = crear_driver()
-        
         abrir_instagram(driver)
         iniciar_sesion(driver, username, password)
         ignorar_ventanas_emergentes(driver)
-        
+
         if abrir_seguidos(driver, target_url):
             perfiles = extraer_seguidos(driver)
             print(f"🔍 Encontrados {len(perfiles)} perfiles para seguir")
-            
+
             if perfiles:
                 seguir_perfiles(driver, perfiles)
-        
-        bot_config['last_run'] = datetime.now().isoformat()
-        save_bot_config()
-        print("✅ Bot completado exitosamente")
-        
-    except Exception as e:
-        print(f"❌ Error crítico en el bot: {str(e)}")
-    finally:
-        try:
-            driver.quit()
-        except:
-            pass
 
-def ejecutar_bot(username, password, target_url):
-    try:
-        driver = crear_driver()
-        abrir_instagram(driver)
-        iniciar_sesion(driver, username, password)
-        ignorar_ventanas_emergentes(driver)
-        
-        if abrir_seguidos(driver, target_url):
-            links = extraer_seguidos(driver)
-            seguir_perfiles(driver, links)
-            
         bot_config['last_run'] = datetime.now().isoformat()
+        bot_config['status'] = 'idle'
+        bot_config['message'] = 'Bot completado exitosamente'
         save_bot_config()
+        msg = "✅ Bot completado exitosamente"
+        print(msg)
+        append_bot_log(msg)
+
     except Exception as e:
-        print(f"Error en ejecución del bot: {e}")
+        bot_config['status'] = 'idle'
+        bot_config['message'] = f'Error en ejecución: {e}'
+        save_bot_config()
+        msg = f"❌ Error en ejecución del bot: {e}"
+        print(msg)
+        append_bot_log(msg)
+
     finally:
         try:
-            # Elimina cookies y cierra completamente
-            driver.delete_all_cookies()
-            driver.quit()
-        except:
+            if driver:
+                driver.delete_all_cookies()
+                driver.quit()
+        except Exception:
             pass
 
 # =============================================
@@ -334,126 +344,47 @@ def ejecutar_bot(username, password, target_url):
 @app.route('/bot', methods=['GET', 'POST'])
 def admin_bot():
     global bot_config
-    
+
     if request.method == 'POST':
+        action = request.form.get('action')
+
         bot_config.update({
             'username': request.form['username'],
             'password': request.form['password'],
-            'target_url': request.form['target_url'],
-            'active': True
+            'target_url': request.form['target_url']
         })
         save_bot_config()
-        
-        threading.Thread(
-            target=ejecutar_bot,
-            args=(bot_config['username'], bot_config['password'], bot_config['target_url'])
-        ).start()
-        
-        return redirect('/bot?success=1')
-    
-    return render_template('sitio/bot.html', config=bot_config)
+
+        if action == 'run_now':
+            try:
+                bot_config['status'] = 'starting'
+                bot_config['message'] = 'Bot iniciándose...'
+                save_bot_config()
+
+                threading.Thread(
+                    target=ejecutar_bot,
+                    args=(bot_config['username'], bot_config['password'], bot_config['target_url']),
+                    daemon=True
+                ).start()
+                return redirect('/bot?success=Bot+iniciado+manualmente')
+            except Exception as e:
+                bot_config['status'] = 'idle'
+                bot_config['message'] = f'Error al iniciar el bot: {e}'
+                save_bot_config()
+                return redirect(f'/bot?error=Error+al+iniciar+el+bot%3A+{str(e)}')
+
+        return redirect('/bot?success=Configuraci%C3%B3n+guardada+correctamente')
+
+    return render_template('sitio/bot.html', config=bot_config, bot_log=tail_bot_log(20))
 
 @app.route('/bot/control', methods=['POST'])
 def control_bot():
-    global bot_config
-    
-    action = request.form.get('action')
-    
-    if action == 'run_now':
-        # Verifica que las credenciales estén configuradas
-        if not all([bot_config.get('username'), bot_config.get('password'), bot_config.get('target_url')]):
-            return redirect('/bot?error=Falta configurar credenciales')
-        
-        # Ejecuta el bot en un hilo separado (sin bloquear Flask)
-        try:
-            threading.Thread(
-                target=ejecutar_bot,
-                args=(bot_config['username'], bot_config['password'], bot_config['target_url']),
-                daemon=True  # Permite que el hilo se cierre si Flask se detiene
-            ).start()
-            return redirect('/bot?success=Bot iniciado manualmente')
-        except Exception as e:
-            return redirect(f'/bot?error=Error al iniciar el bot: {str(e)}')
-    
-    # Resto de acciones (start/stop)
-    elif action == 'start':
-        bot_config['active'] = True
-        save_bot_config()
-        return redirect('/bot?success=Bot programado activado')
-    
-    elif action == 'stop':
-        bot_config['active'] = False
-        save_bot_config()
-        return redirect('/bot?success=Bot programado detenido')
-    
+    # Deprecated: kept for compatibility but not used by bot.html anymore.
     return redirect('/bot')
 
 # =============================================
 # Tarea programada y rutas administrativas
 # =============================================
 
-def tarea_programada():
-    if bot_config['active'] and all(bot_config.values()):
-        print(f"Ejecutando bot programado a las {datetime.now()}")
-        threading.Thread(
-            target=ejecutar_bot,
-            args=(bot_config['username'], bot_config['password'], bot_config['target_url'])
-        ).start()
-
-def init_scheduler():
-    scheduler.init_app(app)
-    scheduler.start()
-    scheduler.add_job(
-        id='ejecucion_automatica',
-        func=tarea_programada,
-        trigger='interval',
-        days=1,
-        next_run_time=datetime.now() + timedelta(seconds=10)
-    )
-
- 
-
-def tiempo_proxima_ejecucion():
-    if not bot_config.get('last_run'):
-        return "Primera ejecución pendiente"
-    
-    ultima_ejecucion = datetime.fromisoformat(bot_config['last_run'])
-    proxima_ejecucion = ultima_ejecucion + timedelta(days=1)
-    tiempo_restante = proxima_ejecucion - datetime.now()
-    
-    # Formatear el tiempo restante
-    dias, segundos = tiempo_restante.days, tiempo_restante.seconds
-    horas = segundos // 3600
-    minutos = (segundos % 3600) // 60
-    segundos = segundos % 60
-     
-    return f"{dias}d {horas}h {minutos}m {segundos}s"
-
-# ... [Tus rutas administrativas originales preservadas] ...
- 
-@app.route('/tiempo_restante')
-def tiempo_restante():
-    return tiempo_proxima_ejecucion()
-
-def tiempo_proxima_ejecucion():
-    if not bot_config.get('last_run') or not bot_config.get('active'):
-        return "No programado"
-    
-    ultima_ejecucion = datetime.fromisoformat(bot_config['last_run'])
-    proxima_ejecucion = ultima_ejecucion + timedelta(days=1)
-    tiempo_restante = proxima_ejecucion - datetime.now()
-    
-    if tiempo_restante.total_seconds() <= 0:
-        return "Próximamente..."
-        
-    dias = tiempo_restante.days
-    segundos = tiempo_restante.seconds
-    horas = segundos // 3600
-    minutos = (segundos % 3600) // 60
-    segundos = segundos % 60
-    
-    return f"{dias}d {horas}h {minutos}m {segundos}s"
-
 if __name__ == '__main__':
-    init_scheduler()
-    app.run(debug=True) 
+    app.run(debug=True)
