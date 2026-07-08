@@ -1,31 +1,57 @@
 {% include 'sitio/cabecera.html' %}
 
 <div class="container">
-
+    <!-- Sección de Bots -->
     <br><br>
     <div class="row">
-        {% for libro in libros%}
-        <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="/img/{{libro[2]}}" alt="Title" height="200" />
-                <div class="card-body">
-                    <h4 class="card-title">{{libro[1]}}</h4>
-                    <p class="card-text">
-                        <a  name=""
-                            id=""
-                            class="btn btn-success"
-                            href="{{libro[3]}}"
-                            role="button">Descargar</a>   
-                    </p>
+        <div class="col-md-6">
+            <div class="card bot-card">
+                <div class="card-body text-center">
+                    <h4 class="card-title">🤖 Bot Seguidor</h4>
+                    <p class="card-text">Automatiza el seguimiento de perfiles en Instagram según su lista de seguidos.</p>
+                    <a class="btn btn-primary" href="/bot" role="button">Ir al Bot Seguidor</a>
                 </div>
-            </div> 
+            </div>
         </div>
-        {% endfor %}
-        <br>
-        
-        
+        <div class="col-md-6">
+            <div class="card bot-card">
+                <div class="card-body text-center">
+                    <h4 class="card-title">💬 Bot Comentador</h4>
+                    <p class="card-text">Automatiza comentarios en publicaciones de Instagram con un mensaje personalizado.</p>
+                    <a class="btn btn-primary" href="/comenta" role="button">Ir al Bot Comentador</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-
+    <!-- Sección de Libros -->
+    <br><br>
+ 
 </div>
+
+<style>
+    .bot-card {
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        border: 2px solid #007bff;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+
+    .bot-card .card-body {
+        width: 100%;
+    }
+
+    .bot-card h4 {
+        color: #007bff;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .bot-card .btn {
+        margin-top: 10px;
+    }
+</style>
+
 {% include 'sitio/pie.html' %}

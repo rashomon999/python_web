@@ -1,0 +1,1001 @@
+[2026-07-08T15:13:15] 🚀 Iniciando bot comentador...
+[2026-07-08T15:13:30] 📱 Abriendo Instagram...
+[2026-07-08T15:13:36] 🔐 Iniciando sesión...
+[2026-07-08T15:13:54] 🎯 Accediendo al perfil: https://www.instagram.com/fifaworldcup/?hl=es
+[2026-07-08T15:13:58] 📸 Buscando publicaciones...
+[2026-07-08T15:14:03] 📊 Publicaciones encontradas: 24
+[2026-07-08T15:14:03] ✅ Total de publicaciones a comentar: 24
+[2026-07-08T15:14:03] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/Dag5rorCzhI/?hl=es
+[2026-07-08T15:14:10] ⚠️ Elemento obsoleto, reintentando...
+[2026-07-08T15:14:13] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dagle6xCZnO/?hl=es
+[2026-07-08T15:14:21] ⚠️ Elemento obsoleto, reintentando...
+[2026-07-08T15:14:24] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dag1dc-vWkk/?hl=es
+[2026-07-08T15:14:31] ⚠️ Elemento obsoleto, reintentando...
+[2026-07-08T15:14:34] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/Dagq8s4iLN_/?hl=es
+[2026-07-08T15:14:42] ⚠️ Elemento obsoleto, reintentando...
+[2026-07-08T15:14:45] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DahqtR7EbfY/?hl=es
+[2026-07-08T15:14:52] ⚠️ Elemento obsoleto, reintentando...
+[2026-07-08T15:14:55] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DagoXnJHBn_/?hl=es
+[2026-07-08T15:15:03] ⚠️ Elemento obsoleto, reintentando...
+[2026-07-08T15:15:06] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/DaiLz2ZP_yH/?hl=es
+[2026-07-08T15:29:06] 🚀 Iniciando bot comentador...
+[2026-07-08T15:29:14] 📱 Abriendo Instagram...
+[2026-07-08T15:29:20] 🔐 Iniciando sesión...
+[2026-07-08T15:29:37] 🎯 Accediendo al perfil: https://www.instagram.com/fifaworldcup/?hl=es
+[2026-07-08T15:29:42] 📸 Buscando publicaciones...
+[2026-07-08T15:29:47] 📊 Publicaciones encontradas: 24
+[2026-07-08T15:29:47] ✅ Total de publicaciones a comentar: 24
+[2026-07-08T15:29:47] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiQjPbj2mC/?hl=es
+[2026-07-08T15:29:58] ⚠️ Elemento obsoleto, reintentando...
+[2026-07-08T15:30:01] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/DaiLz2ZP_yH/?hl=es
+[2026-07-08T15:30:14] ⚠️ Elemento obsoleto, reintentando...
+[2026-07-08T15:30:17] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/DaiG1JVPPFF/?hl=es
+[2026-07-08T15:30:29] ⚠️ Elemento obsoleto, reintentando...
+[2026-07-08T15:30:32] 📝 Visitando: https://www.instagram.com/gianni_infantino/p/Daiw7o9glJ1/?hl=es
+[2026-07-08T15:30:51] ⚠️ No se pudo comentar en https://www.instagram.com/gianni_infantino/p/Daiw7o9glJ1/?hl=es: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xfcb3b3+10713]
+	chromedriver!GetHandleVerifier [0xfcb3f4+10754]
+	chromedriver!(No symbol) [0xdc90e0]
+	chromedriver!(No symbol) [0xe130ab]
+	chromedriver!(No symbol) [0xe132cb]
+	chromedriver!(No symbol) [0xe555d2]
+	chromedriver!(No symbol) [0xe355f4]
+	chromedriver!(No symbol) [0xe52f7c]
+	chromedriver!(No symbol) [0xe35346]
+	chromedriver!(No symbol) [0xe08649]
+	chromedriver!(No symbol) [0xe09414]
+	chromedriver!GetHandleVerifier [0x125bef6+2a1256]
+	chromedriver!GetHandleVerifier [0x12574ab+29c80b]
+	chromedriver!GetHandleVerifier [0x127860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xfe4a06+29d66]
+	chromedriver!GetHandleVerifier [0xfeb6bd+30a1d]
+	chromedriver!GetHandleVerifier [0xfd3f78+192d8]
+	chromedriver!GetHandleVerifier [0xfd4125+19485]
+	chromedriver!GetHandleVerifier [0xfbcd7f+20df]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T15:30:54] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DagyPsyPq9G/?hl=es
+[2026-07-08T15:31:06] ⚠️ Elemento obsoleto, reintentando...
+[2026-07-08T15:31:09] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiOvOUnDf6/?hl=es
+[2026-07-08T15:31:21] ⚠️ Elemento obsoleto, reintentando...
+[2026-07-08T15:31:24] 📝 Visitando: https://www.instagram.com/wimbledon/p/Dah41PfgF2V/?hl=es
+[2026-07-08T15:31:36] ⚠️ Elemento obsoleto, reintentando...
+[2026-07-08T15:34:08] 🚀 Iniciando bot comentador...
+[2026-07-08T15:34:15] 📱 Abriendo Instagram...
+[2026-07-08T15:34:21] 🔐 Iniciando sesión...
+[2026-07-08T15:34:38] 🎯 Accediendo al perfil: https://www.instagram.com/fifaworldcup/?hl=es
+[2026-07-08T15:34:43] 📸 Buscando publicaciones...
+[2026-07-08T15:34:47] 📊 Publicaciones encontradas: 24
+[2026-07-08T15:34:47] ✅ Total de publicaciones a comentar: 24
+[2026-07-08T15:34:47] 📝 Visitando: https://www.instagram.com/coldplay/reel/DaivVlrq_Ju/?hl=es
+[2026-07-08T15:35:13] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:35:16] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dai4ichHI8M/?hl=es
+[2026-07-08T15:35:53] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:35:56] 📝 Visitando: https://www.instagram.com/gianni_infantino/p/Daiw7o9glJ1/?hl=es
+[2026-07-08T15:36:21] ⚠️ No se pudo comentar en https://www.instagram.com/gianni_infantino/p/Daiw7o9glJ1/?hl=es
+[2026-07-08T15:36:24] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/Dag5rorCzhI/?hl=es
+[2026-07-08T15:36:49] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:36:52] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DagpfgTi2Rj/?hl=es
+[2026-07-08T15:37:17] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:37:20] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dagle6xCZnO/?hl=es
+[2026-07-08T15:37:46] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:37:49] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dagup35nJjM/?hl=es
+[2026-07-08T15:38:15] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:38:18] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiT4zOvMi5/?hl=es
+[2026-07-08T15:38:44] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:38:47] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiJYA5ktWn/?hl=es
+[2026-07-08T15:39:12] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:39:15] 📝 Visitando: https://www.instagram.com/fifawomensworldcup/reel/Dagu9DtM8S7/?hl=es
+[2026-07-08T15:39:41] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:39:44] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/DaiXkcEy5T1/?hl=es
+[2026-07-08T15:40:09] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:40:12] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiKiNoDpNL/?hl=es
+[2026-07-08T15:40:38] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:40:41] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/DaiLz2ZP_yH/?hl=es
+[2026-07-08T15:41:06] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:41:09] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiQjPbj2mC/?hl=es
+[2026-07-08T15:41:35] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:41:38] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DagyPsyPq9G/?hl=es
+[2026-07-08T15:42:03] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:42:06] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DahqtR7EbfY/?hl=es
+[2026-07-08T15:42:31] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:42:34] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DagrYU5HGI_/?hl=es
+[2026-07-08T15:43:00] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:43:03] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Daia45Aj41m/?hl=es
+[2026-07-08T15:43:28] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:43:31] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/DaiG1JVPPFF/?hl=es
+[2026-07-08T15:43:55] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:43:58] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiOvOUnDf6/?hl=es
+[2026-07-08T15:44:23] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:44:26] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/Dagq8s4iLN_/?hl=es
+[2026-07-08T15:44:52] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:44:55] 📝 Visitando: https://www.instagram.com/wimbledon/p/Dah41PfgF2V/?hl=es
+[2026-07-08T15:45:20] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:45:23] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiwBtmHAX2/?hl=es
+[2026-07-08T15:45:48] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:45:51] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dag1dc-vWkk/?hl=es
+[2026-07-08T15:46:16] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T15:46:19] ✅ Bot completado: 23 comentarios publicados exitosamente
+[2026-07-08T15:48:41] 🚀 Iniciando bot comentador...
+[2026-07-08T15:48:47] 📱 Abriendo Instagram...
+[2026-07-08T15:48:53] 🔐 Iniciando sesión...
+[2026-07-08T15:49:06] 🎯 Accediendo al perfil: https://www.instagram.com/fifaworldcup/?hl=es
+[2026-07-08T15:49:11] 📸 Buscando publicaciones...
+[2026-07-08T15:49:32] 🚀 Iniciando bot comentador...
+[2026-07-08T15:49:38] 📱 Abriendo Instagram...
+[2026-07-08T15:49:45] 🔐 Iniciando sesión...
+[2026-07-08T15:50:00] 🎯 Accediendo al perfil: https://www.instagram.com/fifaworldcup/?hl=es
+[2026-07-08T15:50:00] ❌ Error en ejecución del bot comentador: Message: unknown error: JavaScript code failed
+from unknown command: 'Runtime.evaluate' wasn't found
+  (Session info: chrome=150.0.7871.47)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x61b3b3+10713]
+	chromedriver!GetHandleVerifier [0x61b3f4+10754]
+	chromedriver!(No symbol) [0x4190e0]
+	chromedriver!(No symbol) [0x408cc5]
+	chromedriver!(No symbol) [0x4077b6]
+	chromedriver!(No symbol) [0x407e36]
+	chromedriver!(No symbol) [0x42bd1e]
+	chromedriver!(No symbol) [0x421a7b]
+	chromedriver!(No symbol) [0x42198d]
+	chromedriver!(No symbol) [0x3fb3c4]
+	chromedriver!(No symbol) [0x3f96ee]
+	chromedriver!(No symbol) [0x4b6b31]
+	chromedriver!(No symbol) [0x4855ac]
+	chromedriver!(No symbol) [0x4a2f7c]
+	chromedriver!(No symbol) [0x485346]
+	chromedriver!(No symbol) [0x458649]
+	chromedriver!(No symbol) [0x459414]
+	chromedriver!GetHandleVerifier [0x8abef6+2a1256]
+	chromedriver!GetHandleVerifier [0x8a74ab+29c80b]
+	chromedriver!GetHandleVerifier [0x8c860b+2bd96b]
+	chromedriver!GetHandleVerifier [0x634a06+29d66]
+	chromedriver!GetHandleVerifier [0x63b6bd+30a1d]
+	chromedriver!GetHandleVerifier [0x623f78+192d8]
+	chromedriver!GetHandleVerifier [0x624125+19485]
+	chromedriver!GetHandleVerifier [0x60cd7f+20df]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T15:50:21] 🚀 Iniciando bot comentador...
+[2026-07-08T15:50:27] 📱 Abriendo Instagram...
+[2026-07-08T15:50:33] 🔐 Iniciando sesión...
+[2026-07-08T16:00:33] 🚀 Iniciando bot comentador...
+[2026-07-08T16:00:40] 📱 Abriendo Instagram...
+[2026-07-08T16:00:47] 🔐 Iniciando sesión...
+[2026-07-08T16:01:44] 🚀 Iniciando bot comentador...
+[2026-07-08T16:01:50] 📱 Abriendo Instagram...
+[2026-07-08T16:01:56] 🔐 Iniciando sesión...
+[2026-07-08T16:05:11] 🚀 Iniciando bot comentador...
+[2026-07-08T16:05:18] 📱 Abriendo Instagram...
+[2026-07-08T16:05:24] 🔐 Iniciando sesión...
+[2026-07-08T16:06:53] 🚀 Iniciando bot comentador...
+[2026-07-08T16:06:59] 📱 Abriendo Instagram...
+[2026-07-08T16:07:05] 🔐 Iniciando sesión...
+[2026-07-08T16:07:22] 🎯 Accediendo al perfil: https://www.instagram.com/fifaworldcup/?hl=es
+[2026-07-08T16:07:27] 📸 Buscando publicaciones...
+[2026-07-08T16:07:31] 📊 Publicaciones encontradas: 12
+[2026-07-08T16:07:36] 📊 Publicaciones encontradas: 12
+[2026-07-08T16:07:40] 📊 Publicaciones encontradas: 12
+[2026-07-08T16:07:40] ✅ Total de publicaciones a comentar: 12
+[2026-07-08T16:07:40] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dai6cM3HOic/?hl=es
+[2026-07-08T16:08:04] ⚠️ No se pudo comentar en https://www.instagram.com/fifaworldcup/p/Dai6cM3HOic/?hl=es
+[2026-07-08T16:08:07] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiJYA5ktWn/?hl=es
+[2026-07-08T16:08:31] ⚠️ No se pudo comentar en https://www.instagram.com/fifaworldcup/p/DaiJYA5ktWn/?hl=es
+[2026-07-08T16:08:34] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Daia45Aj41m/?hl=es
+[2026-07-08T16:08:34] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/Daia45Aj41m/?hl=es: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=150.0.7871.47); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x111b3b3+10713]
+	chromedriver!GetHandleVerifier [0x111b3f4+10754]
+	chromedriver!(No symbol) [0xf190e0]
+	chromedriver!(No symbol) [0xf0837e]
+	chromedriver!(No symbol) [0xf26a49]
+	chromedriver!(No symbol) [0xf8bbfc]
+	chromedriver!(No symbol) [0xfa2899]
+	chromedriver!(No symbol) [0xf85346]
+	chromedriver!(No symbol) [0xf58649]
+	chromedriver!(No symbol) [0xf59414]
+	chromedriver!GetHandleVerifier [0x13abef6+2a1256]
+	chromedriver!GetHandleVerifier [0x13a74ab+29c80b]
+	chromedriver!GetHandleVerifier [0x13c860b+2bd96b]
+	chromedriver!GetHandleVerifier [0x1134a06+29d66]
+	chromedriver!GetHandleVerifier [0x113b6bd+30a1d]
+	chromedriver!GetHandleVerifier [0x1123f78+192d8]
+	chromedriver!GetHandleVerifier [0x1124125+19485]
+	chromedriver!GetHandleVerifier [0x110cd7f+20df]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:08:34] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/DaivVlrq_Ju/?hl=es
+[2026-07-08T16:08:34] ❌ Error al procesar https://www.instagram.com/fifaworldcup/reel/DaivVlrq_Ju/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x111b3b3+10713]
+	chromedriver!GetHandleVerifier [0x111b3f4+10754]
+	chromedriver!(No symbol) [0xf18f1e]
+	chromedriver!(No symbol) [0xf578d5]
+	chromedriver!(No symbol) [0xf85466]
+	chromedriver!(No symbol) [0xf806a2]
+	chromedriver!(No symbol) [0xf80081]
+	chromedriver!(No symbol) [0xeec731]
+	chromedriver!(No symbol) [0xeeccd3]
+	chromedriver!(No symbol) [0xeed18d]
+	chromedriver!GetHandleVerifier [0x13abef6+2a1256]
+	chromedriver!GetHandleVerifier [0x13a74ab+29c80b]
+	chromedriver!GetHandleVerifier [0x13c860b+2bd96b]
+	chromedriver!GetHandleVerifier [0x1134a06+29d66]
+	chromedriver!GetHandleVerifier [0x113b6bd+30a1d]
+	chromedriver!(No symbol) [0xeec3e0]
+	chromedriver!(No symbol) [0xeeba92]
+	chromedriver!GetHandleVerifier [0x150d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:08:34] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Daiw7o9glJ1/?hl=es
+[2026-07-08T16:08:34] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/Daiw7o9glJ1/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x111b3b3+10713]
+	chromedriver!GetHandleVerifier [0x111b3f4+10754]
+	chromedriver!(No symbol) [0xf18f1e]
+	chromedriver!(No symbol) [0xf578d5]
+	chromedriver!(No symbol) [0xf85466]
+	chromedriver!(No symbol) [0xf806a2]
+	chromedriver!(No symbol) [0xf80081]
+	chromedriver!(No symbol) [0xeec731]
+	chromedriver!(No symbol) [0xeeccd3]
+	chromedriver!(No symbol) [0xeed18d]
+	chromedriver!GetHandleVerifier [0x13abef6+2a1256]
+	chromedriver!GetHandleVerifier [0x13a74ab+29c80b]
+	chromedriver!GetHandleVerifier [0x13c860b+2bd96b]
+	chromedriver!GetHandleVerifier [0x1134a06+29d66]
+	chromedriver!GetHandleVerifier [0x113b6bd+30a1d]
+	chromedriver!(No symbol) [0xeec3e0]
+	chromedriver!(No symbol) [0xeeba92]
+	chromedriver!GetHandleVerifier [0x150d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:08:34] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiwBtmHAX2/?hl=es
+[2026-07-08T16:08:34] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/DaiwBtmHAX2/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x111b3b3+10713]
+	chromedriver!GetHandleVerifier [0x111b3f4+10754]
+	chromedriver!(No symbol) [0xf18f1e]
+	chromedriver!(No symbol) [0xf578d5]
+	chromedriver!(No symbol) [0xf85466]
+	chromedriver!(No symbol) [0xf806a2]
+	chromedriver!(No symbol) [0xf80081]
+	chromedriver!(No symbol) [0xeec731]
+	chromedriver!(No symbol) [0xeeccd3]
+	chromedriver!(No symbol) [0xeed18d]
+	chromedriver!GetHandleVerifier [0x13abef6+2a1256]
+	chromedriver!GetHandleVerifier [0x13a74ab+29c80b]
+	chromedriver!GetHandleVerifier [0x13c860b+2bd96b]
+	chromedriver!GetHandleVerifier [0x1134a06+29d66]
+	chromedriver!GetHandleVerifier [0x113b6bd+30a1d]
+	chromedriver!(No symbol) [0xeec3e0]
+	chromedriver!(No symbol) [0xeeba92]
+	chromedriver!GetHandleVerifier [0x150d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:08:34] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DagyPsyPq9G/?hl=es
+[2026-07-08T16:08:34] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/DagyPsyPq9G/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x111b3b3+10713]
+	chromedriver!GetHandleVerifier [0x111b3f4+10754]
+	chromedriver!(No symbol) [0xf18f1e]
+	chromedriver!(No symbol) [0xf578d5]
+	chromedriver!(No symbol) [0xf85466]
+	chromedriver!(No symbol) [0xf806a2]
+	chromedriver!(No symbol) [0xf80081]
+	chromedriver!(No symbol) [0xeec731]
+	chromedriver!(No symbol) [0xeeccd3]
+	chromedriver!(No symbol) [0xeed18d]
+	chromedriver!GetHandleVerifier [0x13abef6+2a1256]
+	chromedriver!GetHandleVerifier [0x13a74ab+29c80b]
+	chromedriver!GetHandleVerifier [0x13c860b+2bd96b]
+	chromedriver!GetHandleVerifier [0x1134a06+29d66]
+	chromedriver!GetHandleVerifier [0x113b6bd+30a1d]
+	chromedriver!(No symbol) [0xeec3e0]
+	chromedriver!(No symbol) [0xeeba92]
+	chromedriver!GetHandleVerifier [0x150d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:08:34] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dagle6xCZnO/?hl=es
+[2026-07-08T16:08:34] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/Dagle6xCZnO/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x111b3b3+10713]
+	chromedriver!GetHandleVerifier [0x111b3f4+10754]
+	chromedriver!(No symbol) [0xf18f1e]
+	chromedriver!(No symbol) [0xf578d5]
+	chromedriver!(No symbol) [0xf85466]
+	chromedriver!(No symbol) [0xf806a2]
+	chromedriver!(No symbol) [0xf80081]
+	chromedriver!(No symbol) [0xeec731]
+	chromedriver!(No symbol) [0xeeccd3]
+	chromedriver!(No symbol) [0xeed18d]
+	chromedriver!GetHandleVerifier [0x13abef6+2a1256]
+	chromedriver!GetHandleVerifier [0x13a74ab+29c80b]
+	chromedriver!GetHandleVerifier [0x13c860b+2bd96b]
+	chromedriver!GetHandleVerifier [0x1134a06+29d66]
+	chromedriver!GetHandleVerifier [0x113b6bd+30a1d]
+	chromedriver!(No symbol) [0xeec3e0]
+	chromedriver!(No symbol) [0xeeba92]
+	chromedriver!GetHandleVerifier [0x150d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:08:34] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dai9Q6WCHJR/?hl=es
+[2026-07-08T16:08:34] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/Dai9Q6WCHJR/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x111b3b3+10713]
+	chromedriver!GetHandleVerifier [0x111b3f4+10754]
+	chromedriver!(No symbol) [0xf18f1e]
+	chromedriver!(No symbol) [0xf578d5]
+	chromedriver!(No symbol) [0xf85466]
+	chromedriver!(No symbol) [0xf806a2]
+	chromedriver!(No symbol) [0xf80081]
+	chromedriver!(No symbol) [0xeec731]
+	chromedriver!(No symbol) [0xeeccd3]
+	chromedriver!(No symbol) [0xeed18d]
+	chromedriver!GetHandleVerifier [0x13abef6+2a1256]
+	chromedriver!GetHandleVerifier [0x13a74ab+29c80b]
+	chromedriver!GetHandleVerifier [0x13c860b+2bd96b]
+	chromedriver!GetHandleVerifier [0x1134a06+29d66]
+	chromedriver!GetHandleVerifier [0x113b6bd+30a1d]
+	chromedriver!(No symbol) [0xeec3e0]
+	chromedriver!(No symbol) [0xeeba92]
+	chromedriver!GetHandleVerifier [0x150d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:08:34] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dai4ichHI8M/?hl=es
+[2026-07-08T16:08:34] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/Dai4ichHI8M/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x111b3b3+10713]
+	chromedriver!GetHandleVerifier [0x111b3f4+10754]
+	chromedriver!(No symbol) [0xf18f1e]
+	chromedriver!(No symbol) [0xf578d5]
+	chromedriver!(No symbol) [0xf85466]
+	chromedriver!(No symbol) [0xf806a2]
+	chromedriver!(No symbol) [0xf80081]
+	chromedriver!(No symbol) [0xeec731]
+	chromedriver!(No symbol) [0xeeccd3]
+	chromedriver!(No symbol) [0xeed18d]
+	chromedriver!GetHandleVerifier [0x13abef6+2a1256]
+	chromedriver!GetHandleVerifier [0x13a74ab+29c80b]
+	chromedriver!GetHandleVerifier [0x13c860b+2bd96b]
+	chromedriver!GetHandleVerifier [0x1134a06+29d66]
+	chromedriver!GetHandleVerifier [0x113b6bd+30a1d]
+	chromedriver!(No symbol) [0xeec3e0]
+	chromedriver!(No symbol) [0xeeba92]
+	chromedriver!GetHandleVerifier [0x150d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:08:34] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dag1dc-vWkk/?hl=es
+[2026-07-08T16:08:34] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/Dag1dc-vWkk/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x111b3b3+10713]
+	chromedriver!GetHandleVerifier [0x111b3f4+10754]
+	chromedriver!(No symbol) [0xf18f1e]
+	chromedriver!(No symbol) [0xf578d5]
+	chromedriver!(No symbol) [0xf85466]
+	chromedriver!(No symbol) [0xf806a2]
+	chromedriver!(No symbol) [0xf80081]
+	chromedriver!(No symbol) [0xeec731]
+	chromedriver!(No symbol) [0xeeccd3]
+	chromedriver!(No symbol) [0xeed18d]
+	chromedriver!GetHandleVerifier [0x13abef6+2a1256]
+	chromedriver!GetHandleVerifier [0x13a74ab+29c80b]
+	chromedriver!GetHandleVerifier [0x13c860b+2bd96b]
+	chromedriver!GetHandleVerifier [0x1134a06+29d66]
+	chromedriver!GetHandleVerifier [0x113b6bd+30a1d]
+	chromedriver!(No symbol) [0xeec3e0]
+	chromedriver!(No symbol) [0xeeba92]
+	chromedriver!GetHandleVerifier [0x150d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:08:34] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiKiNoDpNL/?hl=es
+[2026-07-08T16:08:34] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/DaiKiNoDpNL/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x111b3b3+10713]
+	chromedriver!GetHandleVerifier [0x111b3f4+10754]
+	chromedriver!(No symbol) [0xf18f1e]
+	chromedriver!(No symbol) [0xf578d5]
+	chromedriver!(No symbol) [0xf85466]
+	chromedriver!(No symbol) [0xf806a2]
+	chromedriver!(No symbol) [0xf80081]
+	chromedriver!(No symbol) [0xeec731]
+	chromedriver!(No symbol) [0xeeccd3]
+	chromedriver!(No symbol) [0xeed18d]
+	chromedriver!GetHandleVerifier [0x13abef6+2a1256]
+	chromedriver!GetHandleVerifier [0x13a74ab+29c80b]
+	chromedriver!GetHandleVerifier [0x13c860b+2bd96b]
+	chromedriver!GetHandleVerifier [0x1134a06+29d66]
+	chromedriver!GetHandleVerifier [0x113b6bd+30a1d]
+	chromedriver!(No symbol) [0xeec3e0]
+	chromedriver!(No symbol) [0xeeba92]
+	chromedriver!GetHandleVerifier [0x150d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:08:34] ✅ Bot completado: 0 comentarios publicados exitosamente
+[2026-07-08T16:09:10] 🚀 Iniciando bot comentador...
+[2026-07-08T16:09:16] 📱 Abriendo Instagram...
+[2026-07-08T16:09:22] 🔐 Iniciando sesión...
+[2026-07-08T16:09:39] 🎯 Accediendo al perfil: https://www.instagram.com/fifaworldcup/?hl=es
+[2026-07-08T16:10:21] 🚀 Iniciando bot comentador...
+[2026-07-08T16:10:26] 📱 Abriendo Instagram...
+[2026-07-08T16:10:32] 🔐 Iniciando sesión...
+[2026-07-08T16:14:24] 🚀 Iniciando bot comentador...
+[2026-07-08T16:14:29] 📱 Abriendo Instagram...
+[2026-07-08T16:14:36] 🔐 Iniciando sesión...
+[2026-07-08T16:18:54] 🚀 Iniciando bot comentador...
+[2026-07-08T16:19:00] 📱 Abriendo Instagram...
+[2026-07-08T16:19:06] 🔐 Iniciando sesión...
+[2026-07-08T16:19:19] 🎯 Accediendo al perfil: https://www.instagram.com/fifaworldcup/?hl=es
+[2026-07-08T16:19:24] 📸 Buscando publicaciones...
+[2026-07-08T16:19:28] 📊 Publicaciones encontradas: 22
+[2026-07-08T16:19:28] ✅ Total de publicaciones a comentar: 22
+[2026-07-08T16:19:28] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DahqtR7EbfY/?hl=es
+[2026-07-08T16:19:53] ✅ Comentario publicado: https://youtu.be/SwnQidBQdhk
+[2026-07-08T16:38:12] 🚀 Iniciando bot comentador...
+[2026-07-08T16:38:23] 📱 Abriendo Instagram...
+[2026-07-08T16:38:29] 🔐 Iniciando sesión...
+[2026-07-08T16:38:43] 🎯 Accediendo al perfil: https://www.instagram.com/fifaworldcup/?hl=es
+[2026-07-08T16:38:48] 📸 Buscando publicaciones...
+[2026-07-08T16:38:53] 📊 Publicaciones encontradas: 12
+[2026-07-08T16:39:19] 🚀 Iniciando bot comentador...
+[2026-07-08T16:39:40] 📱 Abriendo Instagram...
+[2026-07-08T16:39:46] 🔐 Iniciando sesión...
+[2026-07-08T16:39:59] 🎯 Accediendo al perfil: https://www.instagram.com/fifaworldcup/?hl=es
+[2026-07-08T16:40:04] 📸 Buscando publicaciones...
+[2026-07-08T16:40:08] 📊 Publicaciones encontradas: 22
+[2026-07-08T16:40:08] ✅ Total de publicaciones a comentar: 22
+[2026-07-08T16:40:08] 📝 Visitando: https://www.instagram.com/fifa/p/Dai8mrQGV4U/?hl=es
+[2026-07-08T16:40:26] ⚠️ No se pudo comentar en https://www.instagram.com/fifa/p/Dai8mrQGV4U/?hl=es
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dag1dc-vWkk/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/Dag1dc-vWkk/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/DaiLz2ZP_yH/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/reel/DaiLz2ZP_yH/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/wimbledon/p/Dah41PfgF2V/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/wimbledon/p/Dah41PfgF2V/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/DaiXkcEy5T1/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/reel/DaiXkcEy5T1/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/gianni_infantino/p/Daiw7o9glJ1/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/gianni_infantino/p/Daiw7o9glJ1/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiOvOUnDf6/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/DaiOvOUnDf6/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiJYA5ktWn/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/DaiJYA5ktWn/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dai6cM3HOic/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/Dai6cM3HOic/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Daia45Aj41m/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/Daia45Aj41m/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiT4zOvMi5/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/DaiT4zOvMi5/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/DaiG1JVPPFF/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/reel/DaiG1JVPPFF/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dai4ichHI8M/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/Dai4ichHI8M/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/coldplay/reel/DaivVlrq_Ju/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/coldplay/reel/DaivVlrq_Ju/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiQjPbj2mC/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/DaiQjPbj2mC/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiwBtmHAX2/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/DaiwBtmHAX2/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dai9Q6WCHJR/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/Dai9Q6WCHJR/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DahqtR7EbfY/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/DahqtR7EbfY/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/Dagle6xCZnO/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/Dagle6xCZnO/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DagyPsyPq9G/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/DagyPsyPq9G/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/p/DaiKiNoDpNL/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/p/DaiKiNoDpNL/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] 📝 Visitando: https://www.instagram.com/fifaworldcup/reel/Dag5rorCzhI/?hl=es
+[2026-07-08T16:40:29] ❌ Error al procesar https://www.instagram.com/fifaworldcup/reel/Dag5rorCzhI/?hl=es: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xc4b3b3+10713]
+	chromedriver!GetHandleVerifier [0xc4b3f4+10754]
+	chromedriver!(No symbol) [0xa48f1e]
+	chromedriver!(No symbol) [0xa878d5]
+	chromedriver!(No symbol) [0xab5466]
+	chromedriver!(No symbol) [0xab06a2]
+	chromedriver!(No symbol) [0xab0081]
+	chromedriver!(No symbol) [0xa1c731]
+	chromedriver!(No symbol) [0xa1ccd3]
+	chromedriver!(No symbol) [0xa1d18d]
+	chromedriver!GetHandleVerifier [0xedbef6+2a1256]
+	chromedriver!GetHandleVerifier [0xed74ab+29c80b]
+	chromedriver!GetHandleVerifier [0xef860b+2bd96b]
+	chromedriver!GetHandleVerifier [0xc64a06+29d66]
+	chromedriver!GetHandleVerifier [0xc6b6bd+30a1d]
+	chromedriver!(No symbol) [0xa1c3e0]
+	chromedriver!(No symbol) [0xa1ba92]
+	chromedriver!GetHandleVerifier [0x103d2bf+40261f]
+	KERNEL32!BaseThreadInitThunk [0x762c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c8e00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c8df91+231]
+
+[2026-07-08T16:40:29] ✅ Bot completado: 0 comentarios publicados exitosamente
