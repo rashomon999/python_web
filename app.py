@@ -230,7 +230,7 @@ def ignorar_ventanas_emergentes(driver):
         try:
             fallback = driver.find_elements(
                 By.XPATH,
-                "(//div[@data-visualcompletion='ignore' and contains(@style, 'inset')])[1]"
+                "(//div[@data-visualcompletion='ignore' and contains(@style, 'inset')])[2]"
             )
             if fallback:
                 elemento = fallback[0]
@@ -313,6 +313,46 @@ def seguir_perfiles(driver, lista_perfiles, max_intentos=3):
             except Exception as e:
                 print(f"⚠️ No se pudo seguir {perfil} (intento {intento+1}): {str(e)}")
                 time.sleep(3)
+
+
+def verificar_path_login(driver):
+    """Registra si aparece el selector de login solicitado."""
+    xpath = "(//a[contains(@href, '/accounts/login') and contains(., 'Iniciar sesión')])[2]"
+    try:
+        elementos = driver.find_elements(By.XPATH, xpath)
+        if elementos:
+            msg = f"🔎 Se encontró el path de login: {xpath}"
+            print(msg)
+            append_comenta_log(msg)
+            return True
+        msg = f"🔎 No se encontró el path de login: {xpath}"
+        print(msg)
+        append_comenta_log(msg)
+        return False
+    except Exception as e:
+        msg = f"⚠️ Error al buscar el path de login: {e}"
+        print(msg)
+        append_comenta_log(msg)
+        return False
+
+
+def reiniciar_sesion(driver, username, password):
+    """Reinicia la sesión y registra si aparece el selector de login."""
+    verificar_path_login(driver)
+    try:
+        msg = "🔐 Reiniciando sesión por dos fallos consecutivos..."
+        print(msg)
+        append_comenta_log(msg)
+        abrir_instagram(driver)
+        iniciar_sesion(driver, username, password)
+        ignorar_ventanas_emergentes(driver)
+        return True
+    except Exception as e:
+        msg = f"⚠️ No se pudo reiniciar la sesión: {e}"
+        print(msg)
+        append_comenta_log(msg)
+        return False
+
 
 def ejecutar_bot(username, password, target_url):
     """Función principal que ejecuta todo el flujo del bot"""
@@ -449,6 +489,7 @@ def ejecutar_comenta_bot(username, password, target_url, comment_message):
         
         # Comentar en cada publicación
         comentadas = 0
+        fallos_consecutivos = 0
         for url in fotos_urls:
             try:
                 msg = f"📝 Visitando: {url}"
@@ -464,18 +505,43 @@ def ejecutar_comenta_bot(username, password, target_url, comment_message):
                         print(msg)
                         append_comenta_log(msg)
                         comentadas += 1
+                        fallos_consecutivos = 0
                     else:
+                        fallos_consecutivos += 1
                         msg = f"⚠️ No se pudo comentar en {url}"
                         print(msg)
                         append_comenta_log(msg)
+                        if fallos_consecutivos >= 2:
+                            if reiniciar_sesion(driver, username, password):
+                                driver.get(target_url)
+                                time.sleep(5)
+                                fallos_consecutivos = 0
+                            else:
+                                break
                 except StaleElementReferenceException:
+                    fallos_consecutivos += 1
                     msg = "⚠️ Elemento obsoleto, reintentando..."
                     print(msg)
                     append_comenta_log(msg)
+                    if fallos_consecutivos >= 2:
+                        if reiniciar_sesion(driver, username, password):
+                            driver.get(target_url)
+                            time.sleep(5)
+                            fallos_consecutivos = 0
+                        else:
+                            break
                 except Exception as e:
+                    fallos_consecutivos += 1
                     msg = f"⚠️ No se pudo comentar en {url}: {e}"
                     print(msg)
                     append_comenta_log(msg)
+                    if fallos_consecutivos >= 2:
+                        if reiniciar_sesion(driver, username, password):
+                            driver.get(target_url)
+                            time.sleep(5)
+                            fallos_consecutivos = 0
+                        else:
+                            break
                 
                 time.sleep(3)
                 

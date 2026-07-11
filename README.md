@@ -1,15 +1,19 @@
  
 ##
 1.Seguir a los seguidores de un perfil especifico.
+2.comentar las fotos de un perfil.
 
 a futuro (ya casi esta, tengo los colab ya desarrollados):
-2.comentar las fotos de un perfil.
 3.descargar todas las fotos de un perfil.
+arreglar trampa que pone instagram cuando se hace repetidas veces inicio de sesion con bot (es sencillo la solucion)
 
 ## 🎥 Demostración
 
+### seguidores
 [![Ver demostración](Captura%20de%20pantalla%202026-07-07%20123506.png)](https://youtu.be/2Umxo954krM)
 
+### comentarios
+[![Ver demostración](Captura%20de%20pantalla%202026-07-11%20143430.png)](https://youtu.be/Ts-5L11KUqw)
 ###### 
 
 ## Si se quiere configurar como servicio usar NSSM
