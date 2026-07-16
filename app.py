@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session, send_from_directory
 from datetime import datetime
+from collections import deque
 import os
 import threading
 import time
@@ -228,51 +229,81 @@ def ignorar_ventanas_emergentes(driver):
             print(f"⚠️ Error al intentar 'Ahora no': {e}")
 
         try:
-            fallback = driver.find_elements(
+            elemento = driver.find_element(
                 By.XPATH,
-                "(//div[@data-visualcompletion='ignore' and contains(@style, 'inset')])[2]"
+                "//div[contains(@aria-label, 'Continuar')]"
             )
-            if fallback:
-                elemento = fallback[0]
-                if elemento.is_displayed():
-                    elemento.click()
-                    time.sleep(1)
-                    print("✅ Se hizo clic en el fallback del selector alternativo")
-                    return
+            if elemento and elemento.is_displayed():
+                elemento.click()
+                time.sleep(1)
+                print("✅ Se hizo clic en el fallback del selector alternativo")
+                return
         except Exception as e:
             print(f"⚠️ Error al revisar el fallback alternativo: {e}")
 
         time.sleep(1)
 
 def abrir_seguidos(driver, target_url, reintentos=3):
-    """Abre la lista de seguidos de un perfil"""
+    """Carga el perfil y prueba varios selectores para abrir la lista de seguidores/seguidos."""
+    selectores = [
+        '(//a[contains(@href, "#")])[4]',
+        '(//a[contains(@href, "#")])[3]',
+        '(//a[contains(@href, "#")])[2]',
+        '(//a[contains(@href, "#")])[1]'
+    ]
+
     for intento in range(reintentos):
         try:
             driver.get(target_url)
             time.sleep(5)
-            
-            WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, '(//a[contains(@href, "#")])[3]'))
-            ).click()
-            
-            time.sleep(3)
-            return True
-            
+
+            for selector in selectores:
+                try:
+                    elemento = WebDriverWait(driver, 5).until(
+                        EC.element_to_be_clickable((By.XPATH, selector))
+                    )
+                    elemento.click()
+                    time.sleep(3)
+                    print(f"✅ Se abrió la lista con el selector: {selector}")
+                    return True
+                except Exception:
+                    continue
+
+            print("⚠️ No se encontró ningún selector válido para abrir la lista")
+            return False
+
         except Exception as e:
-            print(f"Intento {intento+1} fallido: {str(e)}")
+            print(f"Intento {intento + 1} fallido: {str(e)}")
             time.sleep(5)
-    
+
     return False
 
 def extraer_seguidos(driver, max_scrolls=15, scroll_delay=1.5):
-    """Extrae los perfiles de la lista de seguidos"""
+    """Extrae perfiles desde el modal de seguidores/seguidos usando varios fallbacks."""
     try:
         modal = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, 'div[role="dialog"]'))
         )
-        
-        scroll_box = modal.find_element(By.CSS_SELECTOR, 'div > div:nth-child(2)')
-        
+
+        scroll_box = None
+        posibles_selectores = [
+            'div[role="dialog"] div[style*="overflow"]',
+            'div[role="dialog"] div:nth-child(2)',
+            'div[role="dialog"] > div',
+            'div[role="dialog"] > div > div'
+        ]
+
+        for selector in posibles_selectores:
+            try:
+                scroll_box = modal.find_element(By.CSS_SELECTOR, selector)
+                if scroll_box:
+                    break
+            except Exception:
+                continue
+
+        if not scroll_box:
+            scroll_box = modal
+
         last_height = driver.execute_script("return arguments[0].scrollHeight", scroll_box)
         for _ in range(max_scrolls):
             driver.execute_script("arguments[0].scrollTo(0, arguments[0].scrollHeight)", scroll_box)
@@ -281,18 +312,142 @@ def extraer_seguidos(driver, max_scrolls=15, scroll_delay=1.5):
             if new_height == last_height:
                 break
             last_height = new_height
-        
+
         perfiles = set()
         for elemento in scroll_box.find_elements(By.TAG_NAME, 'a'):
             href = elemento.get_attribute('href')
-            if href and "/" in href:
+            if href and href.startswith('https://www.instagram.com/'):
                 perfiles.add(href)
-                
+
+        if not perfiles:
+            for elemento in modal.find_elements(By.TAG_NAME, 'a'):
+                href = elemento.get_attribute('href')
+                if href and href.startswith('https://www.instagram.com/'):
+                    perfiles.add(href)
+
         return perfiles
-        
+
     except Exception as e:
         print(f"Error extrayendo seguidos: {str(e)}")
         return set()
+
+
+def abrir_lista_perfiles(driver, target_url, tipo='seguidores', reintentos=3):
+    """Abre la lista de seguidores o seguidos probando los selectores de enlaces con href '#'."""
+    selectores = [
+        '(//a[contains(@href, "#")])[4]',
+        '(//a[contains(@href, "#")])[3]',
+        '(//a[contains(@href, "#")])[2]',
+        '(//a[contains(@href, "#")])[1]'
+    ]
+
+    for intento in range(reintentos):
+        try:
+            driver.get(target_url)
+            time.sleep(5)
+
+            for selector in selectores:
+                try:
+                    elemento = WebDriverWait(driver, 5).until(
+                        EC.element_to_be_clickable((By.XPATH, selector))
+                    )
+                    elemento.click()
+                    time.sleep(3)
+                    print(f"✅ Se abrió la lista de {tipo} con el selector: {selector}")
+                    return True
+                except Exception:
+                    continue
+
+            print(f"⚠️ No se pudo abrir la lista de {tipo} con los selectores probados")
+            return False
+
+        except Exception as e:
+            print(f"Intento {intento + 1} fallido al abrir la lista de {tipo}: {str(e)}")
+            time.sleep(5)
+
+    return False
+
+
+def intentar_seguir_perfil(driver, perfil, max_intentos=3):
+    """Intenta seguir un perfil, aunque sea privado, y devuelve True si lo logra."""
+    for intento in range(max_intentos):
+        try:
+            driver.get(perfil)
+            time.sleep(2)
+
+            botones = WebDriverWait(driver, 5).until(
+                EC.presence_of_all_elements_located((By.TAG_NAME, 'button'))
+            )
+
+            for boton in botones:
+                texto = (boton.text or '').strip().lower()
+                if texto in {'seguir', 'solicitar'}:
+                    boton.click()
+                    print(f"✅ Intento de seguimiento enviado a: {perfil}")
+                    time.sleep(2)
+                    return True
+
+            print(f"⚠️ No se encontró un botón de seguir en {perfil}")
+            return False
+
+        except Exception as e:
+            print(f"⚠️ No se pudo seguir {perfil} (intento {intento + 1}): {str(e)}")
+            time.sleep(3)
+
+    return False
+
+
+def seguir_en_cadena(driver, seed_url, max_depth=4, max_perfiles_por_nivel=None, max_scrolls=10):
+    """Recorre perfiles en cadena acumulando todos los descubiertos en una cola."""
+    visitados = set()
+    en_cola = set()
+    cola = deque([seed_url])
+    en_cola.add(seed_url)
+    profundidad = 0
+
+    while cola and profundidad < max_depth:
+        perfil_actual = cola.popleft()
+        en_cola.remove(perfil_actual)
+
+        if perfil_actual in visitados:
+            continue
+
+        visitados.add(perfil_actual)
+        print(f"🌐 Procesando perfil: {perfil_actual}")
+
+        try:
+            if not abrir_lista_perfiles(driver, perfil_actual, tipo='seguidores'):
+                continue
+
+            perfiles = extraer_seguidos(driver, max_scrolls=max_scrolls)
+            print(f"🔍 Encontrados {len(perfiles)} perfiles desde {perfil_actual}")
+
+            if not perfiles:
+                continue
+
+            if max_perfiles_por_nivel is None:
+                candidatos = list(perfiles)
+            else:
+                candidatos = list(perfiles)[:max_perfiles_por_nivel]
+
+            for candidato in candidatos:
+                if candidato in visitados or candidato in en_cola:
+                    continue
+
+                intentar_seguir_perfil(driver, candidato)
+                cola.append(candidato)
+                en_cola.add(candidato)
+                time.sleep(2)
+
+            print(f"🧾 Pendientes en la cola: {len(cola)}")
+
+        except Exception as e:
+            print(f"⚠️ Error en la cadena de seguimiento para {perfil_actual}: {e}")
+
+        profundidad += 1
+
+    return visitados
+
 
 def seguir_perfiles(driver, lista_perfiles, max_intentos=3):
     """Sigue una lista de perfiles"""
@@ -372,12 +527,7 @@ def ejecutar_bot(username, password, target_url):
         iniciar_sesion(driver, username, password)
         ignorar_ventanas_emergentes(driver)
 
-        if abrir_seguidos(driver, target_url):
-            perfiles = extraer_seguidos(driver)
-            print(f"🔍 Encontrados {len(perfiles)} perfiles para seguir")
-
-            if perfiles:
-                seguir_perfiles(driver, perfiles)
+        seguir_en_cadena(driver, target_url, max_depth=6, max_perfiles_por_nivel=None)
 
         bot_config['last_run'] = datetime.now().isoformat()
         bot_config['status'] = 'idle'
